@@ -1,0 +1,472 @@
+# depslib dependency file v1.0
+1464200230 source:/home/user/Desktop/TD-AM/TD-AM/ClientSocket.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<fcntl.h>
+	<string.h>
+	"ClientSocket.h"
+	"stdio.h"
+	"stdlib.h"
+	<WinSock2.h>
+	<Ws2tcpip.h>
+	<unistd.h>
+	<netinet/in.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netdb.h>
+
+1463101468 /home/user/Desktop/TD-AM/TD-AM/ClientSocket.h
+	<vector>
+	<WinSock2.h>
+	<Ws2tcpip.h>
+	<unistd.h>
+	<netinet/in.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netdb.h>
+
+1466743394 source:/home/user/Desktop/TD-AM/TD-AM/main.cpp
+	<iostream>
+	"ConfigPckgRequest.h"
+	"MeasurementReport.h"
+	"Events.h"
+	"AMReportPackage.h"
+	"ClientSocket.h"
+	"XmlDomDocument.h"
+	<iostream>
+	"ConfigurationPckgRequestResponse.h"
+	"stdio.h"
+	"stdlib.h"
+	"Algoritmos.h"
+	"EventTrigger.h"
+	<pthread.h>
+	"include/rapidjson/document.h"
+	<unistd.h>
+
+1463928863 /home/user/Desktop/TD-AM/TD-AM/ConfigPckgRequest.h
+	<string>
+	<vector>
+	<iostream>
+	"AMFCapabilityProfile.h"
+
+1463928836 /home/user/Desktop/TD-AM/TD-AM/AMFCapabilityProfile.h
+	<vector>
+	<string>
+	"MeasurementTriggerMethod.h"
+	"TVInformation.h"
+	"StbInformation.h"
+	"PCInformation.h"
+	"IptvTVInformation.h"
+	"ImageSize.h"
+	"MobileDeviceInformation.h"
+	"AudioAmplifierInformation.h"
+	<fstream>
+
+1465328134 /home/user/Desktop/TD-AM/TD-AM/MeasurementTriggerMethod.h
+	<vector>
+
+1463100020 /home/user/Desktop/TD-AM/TD-AM/TVInformation.h
+	<fstream>
+
+1462990590 /home/user/Desktop/TD-AM/TD-AM/StbInformation.h
+	<string>
+	<fstream>
+
+1462990576 /home/user/Desktop/TD-AM/TD-AM/PCInformation.h
+	<string>
+	<fstream>
+
+1463098264 /home/user/Desktop/TD-AM/TD-AM/IptvTVInformation.h
+	<string>
+	<fstream>
+
+1463098223 /home/user/Desktop/TD-AM/TD-AM/ImageSize.h
+
+1463099699 /home/user/Desktop/TD-AM/TD-AM/MobileDeviceInformation.h
+	<string>
+	<fstream>
+
+1463094658 /home/user/Desktop/TD-AM/TD-AM/AudioAmplifierInformation.h
+	<fstream>
+
+1465409189 /home/user/Desktop/TD-AM/TD-AM/MeasurementReport.h
+	"eventDefs.h"
+	"ConfigurationChange.h"
+	"DeviceInformation.h"
+	"UserIdBioInfo.h"
+	"UserList.h"
+	"GenericUserInfo.h"
+	"UserInfoChange.h"
+	"PermitBlockedInfo.h"
+	"Events.h"
+	"eventDefs.h"
+
+1463928884 /home/user/Desktop/TD-AM/TD-AM/eventDefs.h
+	<string>
+	<vector>
+
+1463095031 /home/user/Desktop/TD-AM/TD-AM/ConfigurationChange.h
+	"AMFCapabilityProfile.h"
+	"TVInformation.h"
+
+1463095628 /home/user/Desktop/TD-AM/TD-AM/DeviceInformation.h
+	"StbInformation.h"
+	"TVInformation.h"
+	"PCInformation.h"
+	"IptvTVInformation.h"
+	"AudioAmplifierInformation.h"
+	"MobileDeviceInformation.h"
+	<fstream>
+
+1463929041 /home/user/Desktop/TD-AM/TD-AM/UserIdBioInfo.h
+	"eventDefs.h"
+
+1463929050 /home/user/Desktop/TD-AM/TD-AM/UserList.h
+	"eventDefs.h"
+
+1463928909 /home/user/Desktop/TD-AM/TD-AM/GenericUserInfo.h
+	"eventDefs.h"
+
+1463929045 /home/user/Desktop/TD-AM/TD-AM/UserInfoChange.h
+	"eventDefs.h"
+	"UserIdBioInfo.h"
+
+1463099749 /home/user/Desktop/TD-AM/TD-AM/PermitBlockedInfo.h
+	"ConfigPckgRequest.h"
+	"AllContentClassExceptList.h"
+
+1463928817 /home/user/Desktop/TD-AM/TD-AM/AllContentClassExceptList.h
+	"eventDefs.h"
+	"XmlDomDocument.h"
+
+1465335960 /home/user/Desktop/TD-AM/TD-AM/Events.h
+	<string>
+	"eventDefs.h"
+	"AMFCapabilityProfile.h"
+
+1465161601 /home/user/Desktop/TD-AM/TD-AM/AMReportPackage.h
+	"MeasurementReport.h"
+	"StorageCongestionImpactedService.h"
+	<vector>
+
+1463099940 /home/user/Desktop/TD-AM/TD-AM/StorageCongestionImpactedService.h
+
+1463270529 /home/user/Desktop/TD-AM/TD-AM/XmlDomDocument.h
+	<xercesc/parsers/XercesDOMParser.hpp>
+	<xercesc/dom/DOM.hpp>
+	<xercesc/sax/HandlerBase.hpp>
+	<xercesc/util/XMLString.hpp>
+	<xercesc/util/PlatformUtils.hpp>
+	<xercesc/framework/MemBufInputSource.hpp>
+	<string>
+
+1463929059 source:/home/user/Desktop/TD-AM/TD-AM/AllContentClassExceptList.cpp
+	"AllContentClassExceptList.h"
+
+1465328149 source:/home/user/Desktop/TD-AM/TD-AM/AMFCapabilityProfile.cpp
+	"AMFCapabilityProfile.h"
+
+1463929103 source:/home/user/Desktop/TD-AM/TD-AM/AMFConfigPckg.cpp
+	"AMFConfigPckg.h"
+	"stdlib.h"
+	"Algoritmos.h"
+
+1463928842 /home/user/Desktop/TD-AM/TD-AM/AMFConfigPckg.h
+	"MeasurementSet.h"
+	<ctime>
+	<vector>
+	"XmlDomDocument.h"
+
+1463928987 /home/user/Desktop/TD-AM/TD-AM/MeasurementSet.h
+	"AllContentClassExceptList.h"
+	"MeasurementPeriod.h"
+	"DeliveryWindow.h"
+	"MeasurementRequest.h"
+	"XmlDomDocument.h"
+
+1463928937 /home/user/Desktop/TD-AM/TD-AM/MeasurementPeriod.h
+	<vector>
+	<ctime>
+	"XmlDomDocument.h"
+
+1463505801 /home/user/Desktop/TD-AM/TD-AM/DeliveryWindow.h
+	<ctime>
+	"XmlDomDocument.h"
+
+1463928958 /home/user/Desktop/TD-AM/TD-AM/MeasurementRequest.h
+	"LinearTVQualifier.h"
+	"MeasurementDeliverySched.h"
+	"MeasurementSchedule.h"
+	"XmlDomDocument.h"
+	"AllContentClassExceptList.h"
+
+1463928919 /home/user/Desktop/TD-AM/TD-AM/LinearTVQualifier.h
+	<string>
+	<vector>
+	"XmlDomDocument.h"
+
+1463928925 /home/user/Desktop/TD-AM/TD-AM/MeasurementDeliverySched.h
+	<vector>
+	"DeliveryWindow.h"
+	<string>
+	"XmlDomDocument.h"
+
+1463928970 /home/user/Desktop/TD-AM/TD-AM/MeasurementSchedule.h
+	"EventTrigger.h"
+	"TimeTrigger.h"
+	"MeasurementPeriod.h"
+	"ServiceStartTrigger.h"
+	<vector>
+	"XmlDomDocument.h"
+
+1465090308 /home/user/Desktop/TD-AM/TD-AM/EventTrigger.h
+	<string>
+	<vector>
+	"XmlDomDocument.h"
+
+1463929363 /home/user/Desktop/TD-AM/TD-AM/TimeTrigger.h
+	<string>
+	<vector>
+	"XmlDomDocument.h"
+
+1463929015 /home/user/Desktop/TD-AM/TD-AM/ServiceStartTrigger.h
+	"TimeTrigger.h"
+	"XmlDomDocument.h"
+
+1465410312 source:/home/user/Desktop/TD-AM/TD-AM/AMReportPackage.cpp
+	"AMReportPackage.h"
+	<fstream>
+	"eventDefs.h"
+
+1463094687 source:/home/user/Desktop/TD-AM/TD-AM/AudioAmplifierInformation.cpp
+	"AudioAmplifierInformation.h"
+
+1463929113 source:/home/user/Desktop/TD-AM/TD-AM/ConfigPckgRequest.cpp
+	"ConfigPckgRequest.h"
+	"MeasurementTriggerMethod.h"
+	<fstream>
+
+1463095144 source:/home/user/Desktop/TD-AM/TD-AM/ConfigurationChange.cpp
+	"ConfigurationChange.h"
+
+1463509071 source:/home/user/Desktop/TD-AM/TD-AM/ConfigurationPckgRequestResponse.cpp
+	"ConfigurationPckgRequestResponse.h"
+	<string>
+	<iostream>
+
+1463160656 /home/user/Desktop/TD-AM/TD-AM/ConfigurationPckgRequestResponse.h
+	"Directive.h"
+	"XmlDomDocument.h"
+
+1463095716 /home/user/Desktop/TD-AM/TD-AM/Directive.h
+	"AMFConfigPckg.h"
+
+1463095684 source:/home/user/Desktop/TD-AM/TD-AM/DeviceInformation.cpp
+	"DeviceInformation.h"
+
+1463095737 source:/home/user/Desktop/TD-AM/TD-AM/Directive.cpp
+	"Directive.h"
+
+1465407294 source:/home/user/Desktop/TD-AM/TD-AM/Events.cpp
+	"Events.h"
+	"AMFCapabilityProfile.h"
+
+1465165471 source:/home/user/Desktop/TD-AM/TD-AM/EventTrigger.cpp
+	"EventTrigger.h"
+	<iostream>
+
+1463929134 source:/home/user/Desktop/TD-AM/TD-AM/GenericUserInfo.cpp
+	"GenericUserInfo.h"
+
+1463098245 source:/home/user/Desktop/TD-AM/TD-AM/ImageSize.cpp
+	"ImageSize.h"
+
+1463098373 source:/home/user/Desktop/TD-AM/TD-AM/IptvTVInformation.cpp
+	"IptvTVInformation.h"
+	"string.h"
+
+1463929151 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementDeliverySched.cpp
+	"MeasurementDeliverySched.h"
+
+1463929164 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementPeriod.cpp
+	"MeasurementPeriod.h"
+	"stdlib.h"
+	"Algoritmos.h"
+
+1465697551 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementReport.cpp
+	"MeasurementReport.h"
+
+1463929193 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementRequest.cpp
+	"MeasurementRequest.h"
+	"Algoritmos.h"
+
+1463929202 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementSchedule.cpp
+	"MeasurementSchedule.h"
+
+1463929223 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementSet.cpp
+	"MeasurementSet.h"
+	"Algoritmos.h"
+
+1463929265 source:/home/user/Desktop/TD-AM/TD-AM/MeasurementTriggerMethod.cpp
+	"MeasurementTriggerMethod.h"
+
+1463099723 source:/home/user/Desktop/TD-AM/TD-AM/MobileDeviceInformation.cpp
+	"MobileDeviceInformation.h"
+	"string.h"
+
+1462990574 source:/home/user/Desktop/TD-AM/TD-AM/PCInformation.cpp
+	"PCInformation.h"
+	<string.h>
+
+1463099893 source:/home/user/Desktop/TD-AM/TD-AM/PermitBlockedInfo.cpp
+	"PermitBlockedInfo.h"
+
+1463929272 source:/home/user/Desktop/TD-AM/TD-AM/ServiceStartTrigger.cpp
+	"ServiceStartTrigger.h"
+
+1462990588 source:/home/user/Desktop/TD-AM/TD-AM/StbInformation.cpp
+	"StbInformation.h"
+	"string.h"
+
+1463099957 source:/home/user/Desktop/TD-AM/TD-AM/StorageCongestionImpactedService.cpp
+	"StorageCongestionImpactedService.h"
+
+1465411085 source:/home/user/Desktop/TD-AM/TD-AM/TimeTrigger.cpp
+	"TimeTrigger.h"
+	<iostream>
+
+1463100044 source:/home/user/Desktop/TD-AM/TD-AM/TVInformation.cpp
+	"TVInformation.h"
+
+1463929406 source:/home/user/Desktop/TD-AM/TD-AM/UserIdBioInfo.cpp
+	"UserIdBioInfo.h"
+
+1463929413 source:/home/user/Desktop/TD-AM/TD-AM/UserInfoChange.cpp
+	"UserInfoChange.h"
+
+1463929418 source:/home/user/Desktop/TD-AM/TD-AM/UserList.cpp
+	"UserList.h"
+
+1463748842 source:/home/user/Desktop/TD-AM/TD-AM/XmlDomDocument.cpp
+	"XmlDomDocument.h"
+	"stdio.h"
+
+1463507779 source:/home/user/Desktop/TD-AM/TD-AM/DeliveryWindow.cpp
+	"DeliveryWindow.h"
+	"stdlib.h"
+	"Algoritmos.h"
+
+1463929142 source:/home/user/Desktop/TD-AM/TD-AM/LinearTVQualifier.cpp
+	"LinearTVQualifier.h"
+
+1463267469 /home/user/Desktop/TD-AM/TD-AM/Algoritmos.h
+	<string>
+	<vector>
+	<iostream>
+	<ctime>
+
+1463678077 source:/home/user/Desktop/TD-AM/TD-AM/Algoritmos.cpp
+	"Algoritmos.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/document.h
+	"reader.h"
+	"internal/meta.h"
+	"internal/strfunc.h"
+	"memorystream.h"
+	"encodedstream.h"
+	<new>
+	<iterator>
+	<utility>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/reader.h
+	"allocators.h"
+	"stream.h"
+	"encodedstream.h"
+	"internal/meta.h"
+	"internal/stack.h"
+	"internal/strtod.h"
+	<intrin.h>
+	<nmmintrin.h>
+	<emmintrin.h>
+	<stdexcept>
+	"rapidjson/error/error.h"
+	"rapidjson/reader.h"
+	"error/error.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/allocators.h
+	"rapidjson.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/rapidjson.h
+	<cstdlib>
+	<cstring>
+	"rapidjson/..."
+	<string>
+	"msinttypes/stdint.h"
+	"msinttypes/inttypes.h"
+	<stdint.h>
+	<inttypes.h>
+	<endian.h>
+	"rapidjson/..."
+	<cassert>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/msinttypes/stdint.h
+	<stdint.h>
+	<limits.h>
+	<wchar.h>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/msinttypes/inttypes.h
+	"stdint.h"
+	<inttypes.h>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/stream.h
+	"rapidjson.h"
+	"encodings.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/encodings.h
+	"rapidjson.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/encodedstream.h
+	"stream.h"
+	"memorystream.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/memorystream.h
+	"stream.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/meta.h
+	"../rapidjson.h"
+	<type_traits>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/stack.h
+	"../allocators.h"
+	"swap.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/swap.h
+	"../rapidjson.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/strtod.h
+	"ieee754.h"
+	"biginteger.h"
+	"diyfp.h"
+	"pow10.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/ieee754.h
+	"../rapidjson.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/biginteger.h
+	"../rapidjson.h"
+	<intrin.h>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/diyfp.h
+	"../rapidjson.h"
+	<intrin.h>
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/pow10.h
+	"../rapidjson.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/error/error.h
+	"../rapidjson.h"
+
+1462948479 /home/user/Desktop/TD-AM/TD-AM/include/rapidjson/internal/strfunc.h
+	"../stream.h"
+
