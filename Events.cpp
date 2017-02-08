@@ -293,3 +293,31 @@ float ChannelStart::getObscuration()
 {
     return this->obscuration;
 }
+
+
+
+void VoDEvent::setServiceIdentifier(std::string id)
+{
+  this->serviceIdentifier = id;
+}
+
+std::string VoDEvent::getServiceIdentifier()
+{
+    return this->serviceIdentifier;
+}
+
+void VoDEvent::setEventName(std::string event)
+{
+    this->event = event;
+}
+
+std::string VoDEvent::getEventName()
+{
+    return this->event;
+}
+
+VoDEvent::VoDEvent()
+{
+    this->setServiceInstanceID(2);
+}
+

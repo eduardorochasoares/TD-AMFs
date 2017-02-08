@@ -177,4 +177,19 @@ class ChannelPlaying : public Events{
         ChannelPlaying();
 
 };
+
+class VoDEvent : public Events{
+    private:
+        std::string event;
+        std::string serviceIdentifier;
+
+    public:
+        void setServiceIdentifier(std::string id);
+        std::string getServiceIdentifier();
+
+        void setEventName(std::string event);
+        std::string getEventName();
+        VoDEvent();
+};
+
 #endif // EVENTS_H_INCLUDED

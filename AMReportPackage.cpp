@@ -366,6 +366,13 @@ void AMReportPackage::writeXML()
                 xml<<"<ServiceInstanceID>"<<m->getChannelStop()->getServiceInstanceID()<<"</ServiceInstanceID>"<<endl;
                 xml<<"</ChannelStop>"<<endl;
             }
+            if(m->getVodEvents() != NULL){
+                xml<<"<VoDEvents>"<<endl;
+                xml<<"<Name>"<<m->getVodEvents()->getEventName()<<"</Name>"<<endl;
+                xml<<"<ServiceIdentifier>"<<m->getVodEvents()->getServiceIdentifier()<<"</ServiceIdentifier>"<<endl;
+                xml<<"<ServiceInstanceID>"<<m->getVodEvents()->getServiceInstanceID()<<"</ServiceInstanceID>"<<endl;
+                xml<<"</VoDEvents>"<<endl;
+            }
             ChannelPlaying *channelP = NULL;
             for(int j = 0; j < m->getChannelPlaying().size(); j++){
                 channelP = m->getChannelPlaying().at(j);

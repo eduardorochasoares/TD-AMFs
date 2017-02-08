@@ -230,6 +230,15 @@ GenericUserInfo* MeasurementReport::getGenericUserInfo()
 {
     return this->genericUserInfo;
 }
+void MeasurementReport::setVodEvents(VoDEvent* vodEvent)
+{
+    this->vodEvent = vodEvent;
+}
+
+VoDEvent* MeasurementReport::getVodEvents()
+{
+    return this->vodEvent;
+}
 
 
 MeasurementReport::~MeasurementReport()
@@ -280,6 +289,7 @@ MeasurementReport::~MeasurementReport()
         delete this->getUserPresent().at(i);
      }
 }
+
 MeasurementReport::MeasurementReport()
 {
     this->audioFocus = NULL;

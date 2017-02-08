@@ -4,11 +4,7 @@
 <SubscriberID>12345</SubscriberID>
 <TerminalDeviceID>I3E56</TerminalDeviceID>
 <MeasurementReport>
-<MeasurementRequestID>992</MeasurementRequestID>
-<MeasurementReportTriggerTime>24/6/2016  1:49:5</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
-<ChannelPlaying>
-<ServiceIdentifier>Globo</ServiceIdentifier>
-<ServiceInstanceID>1</ServiceInstanceID>
-</ChannelPlaying>
+<MeasurementRequestID>20</MeasurementRequestID>
+<MeasurementReportTriggerTime>7/2/2017  14:46:16</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
 </MeasurementReport>
 </AMReportPackage>

@@ -17,15 +17,21 @@
         // std::mutex
 using namespace std;
 ConfigurationPckgRequestResponse *config = NULL;
-std::string localAddress = "192.168.1.7";
-std::string serverAddress = "192.168.1.4";
+
+std::string localAddress = "127.0.0.1";
+std::string serverAddress;
+
 ChannelStop *channelStop = new ChannelStop();
 ChannelStart *channelStart = new ChannelStart();
 AudioVolume *audioVolume = new AudioVolume();
 VideoResize *videoResize = new VideoResize();
+VoDEvent *vodEvent = new VoDEvent();
+
 std::vector<Events*> commomEvents;
 std::vector<ChannelPlaying*> channelsPlaying;
+
 pthread_mutex_t lock, lock_events, lock_report;
+
 void *clientHandler(void *arg);
 void *XmlXchange(void *arg);
 void timer();
@@ -42,7 +48,12 @@ typedef struct countdown{
     int i, j, k;
 }Count;
 
-
+void readConfigs(){
+    std::ifstream config;
+    config.open("server.conf");
+    config >> serverAddress;
+    std::cout<<"serveraddress "<<serverAddress<<std::endl;
+}
 void *clientHandler(void *args){
     int sock = *(int*)args;
     char buffer[4096];
@@ -222,6 +233,14 @@ void updateEvents(char *json){
         videoResize->setImageHeight(doc["Events"]["ImageHeight"].GetInt());
         videoResize->setImageWidth(doc["Events"]["ImageWidth"].GetInt());
     }
+
+    if(doc["Events"].HasMember("VoDEvents")){
+        vodEvent->setEventName(doc["Events"]["VoDEvents"]["Name"].GetString());
+        vodEvent->setServiceIdentifier(doc["Events"]["VoDEvents"]["ServiceIdentifier"].GetString());
+        vodEvent->setServiceInstanceID(doc["Events"]["VoDEvents"]["ServiceInstanceID"].GetInt());
+
+    }
+
 }
 
 void verififyEvents(rapidjson::Document& doc, MeasurementSchedule *msched, int i, int j, AMReportPackage *amr){
@@ -250,6 +269,11 @@ void verififyEvents(rapidjson::Document& doc, MeasurementSchedule *msched, int i
             if((strcmp(te->events, "VideoResize") == 0) && (doc["Events"].HasMember("VideoResize"))){
                mreport->setVideoResize(videoResize);
             }
+
+            if((strcmp(te->events, "VoDEvents") == 0) && (doc["Events"].HasMember("VoDEvents"))){
+               mreport->setVodEvents(vodEvent);
+            }
+
         }
     }
 }
@@ -330,7 +354,7 @@ bool verifyPeriod(MeasurementSchedule *msched){
             }
         }
     }
-    std::cout<<"aaaa entrou"<<std::endl;
+
     return false;
 }
 
@@ -404,7 +428,7 @@ void *countDown(void *timer){
 }
 int main()
 {
-
+    readConfigs();
     if ((pthread_mutex_init(&lock, NULL) != 0) && (pthread_mutex_init(&lock_events, NULL)!= 0)&& (pthread_mutex_init(&lock_report, NULL)) != 0){
         printf("\n mutex init failed\n");
         return 1;
@@ -484,7 +508,7 @@ void timer(){
 void *XmlXchange(void *arg){
 
     /* na realidadade fará a descoberta através do deamon, ip-fixo para testar*/
-    std::ofstream out("ConfigurationRequestResponse.xml", std::ofstream::binary);
+
     char *buf;
     buf = new char[4096];
 
@@ -492,33 +516,39 @@ void *XmlXchange(void *arg){
 
     std::string port = "8009";
     int socket = s->createSocket(port,serverAddress);
-    if(socket != 0){
-        s->sendFile("ConfigurationRequest.xml", socket);
-        recv(socket, buf, 4096, 0);
-        int i = 0;
-        while(buf[i] != '\0'){
-            i++;
-        }
-        out.write(buf,i);
-        delete[] buf;
+    if (!std::ifstream("ConfigurationRequestResponse.xml")){
+        if(socket != 0){
+            s->sendFile("ConfigurationRequest.xml", socket);
+            recv(socket, buf, 4096, 0);
+            int i = 0;
+            while(buf[i] != '\0'){
+                std::cout<<buf[i]<<std::endl;
+                i++;
+            }
 
-        XmlDomDocument* doc = new XmlDomDocument("ConfigurationRequestResponse.xml");
-        config = new ConfigurationPckgRequestResponse();
-        pthread_mutex_lock(&lock);
-        config->parsingConfigurationPckgRequestResponse(doc);
-        pthread_mutex_unlock(&lock);
-        delete doc;
-        std::cout<<config->getImmediateMeasurement()->getAMFConfigPckg()->getMeasurementSet().at(0)->getMeasurementRequests().size()<<std::flush;
-        //delete config;
-    }else{
-        pthread_exit(0);
+            std::ofstream out("ConfigurationRequestResponse.xml", std::ofstream::binary);
+            out.write(buf,i);
+            delete[] buf;
+        }else{
+            pthread_exit(0);
+        }
     }
+
+    XmlDomDocument* doc = new XmlDomDocument("ConfigurationRequestResponse.xml");
+    config = new ConfigurationPckgRequestResponse();
+    pthread_mutex_lock(&lock);
+    config->parsingConfigurationPckgRequestResponse(doc);
+    pthread_mutex_unlock(&lock);
+    delete doc;
+    std::cout<<config->getImmediateMeasurement()->getAMFConfigPckg()->getMeasurementSet().at(0)->getMeasurementRequests().size()<<std::flush;
+    //delete config;
+
 }
 
 void *midwareCommunication(void *arg){
    int sockfd, newsockfd;
    pthread_t connectionHandler;
-   std::string port = "5001";
+   std::string port = "6666";
    std::string address = localAddress;
    socklen_t clilen;
    char buffer[4096];

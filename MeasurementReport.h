@@ -38,6 +38,7 @@ class MeasurementReport{
         vector<ChannelPlaying*> channelPlaying;
         ChannelStart *channelStart;
         ChannelStop *channelStop;
+        VoDEvent *vodEvent;
 
     public:
         void setMeasurementRequestID(int id);
@@ -63,8 +64,9 @@ class MeasurementReport{
         void setChannelStart(ChannelStart *channelStart);
         void setChannelStop(ChannelStop *channelStop);
         void setGenericUserInfo(GenericUserInfo *g);
-        int getMeasurementRequestID();
+        void setVodEvents(VoDEvent *vodEvent);
 
+        int getMeasurementRequestID();
         GenericUserInfo* getGenericUserInfo();
         struct tm *getMeasurementReportTriggerTime();
         bool getDisplayStatus();
@@ -76,6 +78,7 @@ class MeasurementReport{
         VideoObscure *getVideoObscure();
         VideoZoom *getVideoZoom();
         VideoResize *getVideoResize();
+        VoDEvent *getVodEvents();
         vector<EventCount*>& getEventCount();
         DeviceInformation *getDeviceInformation();
         vector<UserIdBioInfo*>& getUserIdBioInfo();
