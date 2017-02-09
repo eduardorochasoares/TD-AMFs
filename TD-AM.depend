@@ -490,7 +490,7 @@
 	<string>
 	<vector>
 
-1483976088 /home/eduardo/tdAmf/TD-AMFs/XmlDomDocument.h
+1486639720 /home/eduardo/tdAmf/TD-AMFs/XmlDomDocument.h
 	<xercesc/parsers/XercesDOMParser.hpp>
 	<xercesc/dom/DOM.hpp>
 	<xercesc/sax/HandlerBase.hpp>
@@ -609,7 +609,7 @@
 	"TimeTrigger.h"
 	"XmlDomDocument.h"
 
-1486488032 source:/home/eduardo/tdAmf/TD-AMFs/AMReportPackage.cpp
+1486640359 source:/home/eduardo/tdAmf/TD-AMFs/AMReportPackage.cpp
 	"AMReportPackage.h"
 	<fstream>
 	"eventDefs.h"
@@ -619,7 +619,7 @@
 	"StorageCongestionImpactedService.h"
 	<vector>
 
-1486487229 /home/eduardo/tdAmf/TD-AMFs/MeasurementReport.h
+1486639486 /home/eduardo/tdAmf/TD-AMFs/MeasurementReport.h
 	"eventDefs.h"
 	"ConfigurationChange.h"
 	"DeviceInformation.h"
@@ -667,7 +667,7 @@
 	<iostream>
 	"AMFCapabilityProfile.h"
 
-1486427471 /home/eduardo/tdAmf/TD-AMFs/Events.h
+1486633433 /home/eduardo/tdAmf/TD-AMFs/Events.h
 	<string>
 	"eventDefs.h"
 	"AMFCapabilityProfile.h"
@@ -677,7 +677,7 @@
 1483976088 source:/home/eduardo/tdAmf/TD-AMFs/AudioAmplifierInformation.cpp
 	"AudioAmplifierInformation.h"
 
-1483976088 source:/home/eduardo/tdAmf/TD-AMFs/ClientSocket.cpp
+1486634728 source:/home/eduardo/tdAmf/TD-AMFs/ClientSocket.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -693,6 +693,9 @@
 	<sys/socket.h>
 	<arpa/inet.h>
 	<netdb.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<net/if.h>
 
 1483976088 /home/eduardo/tdAmf/TD-AMFs/ClientSocket.h
 	<vector>
@@ -735,7 +738,7 @@
 1483976088 source:/home/eduardo/tdAmf/TD-AMFs/Directive.cpp
 	"Directive.h"
 
-1486484569 source:/home/eduardo/tdAmf/TD-AMFs/Events.cpp
+1486633425 source:/home/eduardo/tdAmf/TD-AMFs/Events.cpp
 	"Events.h"
 	"AMFCapabilityProfile.h"
 
@@ -756,7 +759,7 @@
 1483976088 source:/home/eduardo/tdAmf/TD-AMFs/LinearTVQualifier.cpp
 	"LinearTVQualifier.h"
 
-1486485960 source:/home/eduardo/tdAmf/TD-AMFs/main.cpp
+1486641832 source:/home/eduardo/tdAmf/TD-AMFs/main.cpp
 	<iostream>
 	"ConfigPckgRequest.h"
 	"MeasurementReport.h"
@@ -773,6 +776,11 @@
 	<pthread.h>
 	"include/rapidjson/document.h"
 	<unistd.h>
+	<netdb.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<net/if.h>
+	"XmlDomDocument.h"
 
 1483976088 /home/eduardo/tdAmf/TD-AMFs/include/rapidjson/document.h
 	"reader.h"
@@ -883,7 +891,7 @@
 	"stdlib.h"
 	"Algoritmos.h"
 
-1486487254 source:/home/eduardo/tdAmf/TD-AMFs/MeasurementReport.cpp
+1486639544 source:/home/eduardo/tdAmf/TD-AMFs/MeasurementReport.cpp
 	"MeasurementReport.h"
 
 1483976088 source:/home/eduardo/tdAmf/TD-AMFs/MeasurementRequest.cpp

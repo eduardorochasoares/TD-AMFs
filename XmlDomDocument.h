@@ -8,6 +8,7 @@
 #include <xercesc/framework/MemBufInputSource.hpp>
 #include <string>
 
+
 using namespace std;
 using namespace xercesc;
 

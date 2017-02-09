@@ -321,3 +321,13 @@ VoDEvent::VoDEvent()
     this->setServiceInstanceID(2);
 }
 
+
+std::string VoDPlaying::getServiceIdentifier()
+{
+    return this->serviceIdentifier;
+}
+
+void VoDPlaying::setServiceIdentifier(std::string identifier)
+{
+    this->serviceIdentifier = identifier;
+}

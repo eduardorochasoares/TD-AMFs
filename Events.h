@@ -192,4 +192,12 @@ class VoDEvent : public Events{
         VoDEvent();
 };
 
+class VoDPlaying : public Events{
+    private:
+        std::string serviceIdentifier;
+    public:
+        std::string getServiceIdentifier();
+        void setServiceIdentifier(std::string identifier);
+};
+
 #endif // EVENTS_H_INCLUDED

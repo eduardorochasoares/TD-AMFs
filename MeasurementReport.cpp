@@ -312,6 +312,17 @@ MeasurementReport::MeasurementReport()
     this->userList = NULL;
     this->videoResize = NULL;
     this->videoZoom = NULL;
+    this->vodEvent = NULL;
+
 }
 
+void MeasurementReport::setVodPlaying(vector<VoDPlaying*>& vod)
+{
+    this->vodPlaying = vod;
+}
+
+vector<VoDPlaying*>& MeasurementReport::getVodPlaying()
+{
+    return this->vodPlaying;
+}
 

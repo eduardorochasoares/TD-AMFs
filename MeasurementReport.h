@@ -39,6 +39,7 @@ class MeasurementReport{
         ChannelStart *channelStart;
         ChannelStop *channelStop;
         VoDEvent *vodEvent;
+        vector<VoDPlaying*> vodPlaying;
 
     public:
         void setMeasurementRequestID(int id);
@@ -65,6 +66,7 @@ class MeasurementReport{
         void setChannelStop(ChannelStop *channelStop);
         void setGenericUserInfo(GenericUserInfo *g);
         void setVodEvents(VoDEvent *vodEvent);
+        void setVodPlaying(vector<VoDPlaying*>& vod);
 
         int getMeasurementRequestID();
         GenericUserInfo* getGenericUserInfo();
@@ -89,6 +91,7 @@ class MeasurementReport{
         PermitBlockedInfo *getPermitBlockedInfo();
 
         vector<ChannelPlaying*>& getChannelPlaying();
+        vector<VoDPlaying*>& getVodPlaying();
         ChannelStart *getChannelStart();
         ChannelStop *getChannelStop();
 

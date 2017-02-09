@@ -382,6 +382,16 @@ void AMReportPackage::writeXML()
                 xml<<"</ChannelPlaying>"<<endl;
 
             }
+            VoDPlaying *videoP = NULL;
+            for(int j = 0; j < m->getVodPlaying().size(); j++){
+                videoP = m->getVodPlaying().at(j);
+                xml<<"<VideoPlaying>"<<endl;
+                xml<<"<ServiceIdentifier>"<<videoP->getServiceIdentifier()<<"</ServiceIdentifier>"<<endl;
+                xml<<"<ServiceInstanceID>"<<videoP->getServiceInstanceID()<<"</ServiceInstanceID>"<<endl;
+                xml<<"</VideoPlaying>"<<endl;
+
+            }
+
 
 
             xml<<"</MeasurementReport>"<<endl;

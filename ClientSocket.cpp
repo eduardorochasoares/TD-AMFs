@@ -25,6 +25,9 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <net/if.h>
 #endif
 
 
@@ -39,6 +42,7 @@ int ClientSocket::createSocket(string port, string address)
 #else
     int sock;
 #endif
+    struct ifreq buffer;
 
 
     struct addrinfo* ai;
@@ -49,6 +53,9 @@ int ClientSocket::createSocket(string port, string address)
     hints.ai_protocol = IPPROTO_TCP;
     getaddrinfo(address.c_str(), port.c_str(), &hints, &ai);
     sock = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol);
+
+
+
     if(connect(sock, ai->ai_addr, ai->ai_addrlen)!=0){
         printf("\nSocket Connection FAILED!\n");
         if (sock) {

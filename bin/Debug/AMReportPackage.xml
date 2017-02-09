@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<AMReportPackage>
+<SubscriberID>12345</SubscriberID>
+<TerminalDeviceID>I3E56</TerminalDeviceID>
+<MeasurementReport>
+<MeasurementRequestID>67</MeasurementRequestID>
+<MeasurementReportTriggerTime>9/2/2017  11:6:56</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
+</MeasurementReport>
+</AMReportPackage>

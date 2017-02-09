@@ -14,6 +14,12 @@
 #include <pthread.h>
 #include "include/rapidjson/document.h"
 #include <unistd.h>
+#include <netdb.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <net/if.h>
+#include "XmlDomDocument.h"
+
         // std::mutex
 using namespace std;
 ConfigurationPckgRequestResponse *config = NULL;
@@ -29,7 +35,7 @@ VoDEvent *vodEvent = new VoDEvent();
 
 std::vector<Events*> commomEvents;
 std::vector<ChannelPlaying*> channelsPlaying;
-
+std::vector<VoDPlaying*> videosPlaying;
 pthread_mutex_t lock, lock_events, lock_report;
 
 void *clientHandler(void *arg);
@@ -235,7 +241,21 @@ void updateEvents(char *json){
     }
 
     if(doc["Events"].HasMember("VoDEvents")){
-        vodEvent->setEventName(doc["Events"]["VoDEvents"]["Name"].GetString());
+        std::string name = doc["Events"]["VoDEvents"]["Name"].GetString();
+        if(videosPlaying.size() == 0){
+            if(name.compare("Videostart") == 0 || name.compare("Videoplay") == 0){
+                VoDPlaying *vod = new VoDPlaying();
+                vod->setServiceIdentifier(doc["Events"]["VoDEvents"]["ServiceIdentifier"].GetString());
+                vod->setServiceInstanceID(doc["Events"]["VoDEvents"]["ServiceInstanceID"].GetInt());
+                videosPlaying.push_back(vod);
+            }
+        }else if(name.compare("Videopause") == 0 || name.compare("Videostop") == 0 || name.compare("Videoexit") == 0){
+            VoDPlaying *vod = videosPlaying.at(0);
+            videosPlaying.erase(videosPlaying.begin());
+
+
+        }
+        vodEvent->setEventName(name);
         vodEvent->setServiceIdentifier(doc["Events"]["VoDEvents"]["ServiceIdentifier"].GetString());
         vodEvent->setServiceInstanceID(doc["Events"]["VoDEvents"]["ServiceInstanceID"].GetInt());
 
@@ -416,6 +436,13 @@ void *countDown(void *timer){
                         mreport->getChannelPlaying().push_back(*it);
                     }
                 }
+                if(strcmp(timeTrigger->getSampleSet().at(x)->getSampleSetId().c_str(), "VideoPlaying") == 0){
+                    std::cout<<"size : " <<videosPlaying.size()<<std::endl;
+                    for (std::vector<VoDPlaying*>::iterator it = videosPlaying.begin() ;
+                        it != videosPlaying.end(); ++it){
+                        mreport->getVodPlaying().push_back(*it);
+                    }
+                }
             }
             std::cout<<"id :"<<mreport->getMeasurementRequestID()<<std::flush;
             amreport->getMeasurementReports().push_back(mreport);
@@ -516,6 +543,22 @@ void *XmlXchange(void *arg){
 
     std::string port = "8009";
     int socket = s->createSocket(port,serverAddress);
+
+    //getting mac address
+    struct ifreq buffer;
+
+    memset(&buffer, 0x00, sizeof(buffer));
+
+    strcpy(buffer.ifr_name, "eth0");
+
+    ioctl(socket, SIOCGIFHWADDR, &buffer);
+    for( int i = 0; i < 6; i++ )
+    {
+        printf("%.2X ", (unsigned char)buffer.ifr_hwaddr.sa_data[i]);
+    }
+    printf("\n");
+
+
     if (!std::ifstream("ConfigurationRequestResponse.xml")){
         if(socket != 0){
             s->sendFile("ConfigurationRequest.xml", socket);
