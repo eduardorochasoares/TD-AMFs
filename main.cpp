@@ -65,16 +65,25 @@ void *clientHandler(void *args){
     char buffer[4096];
     recv(sock, buffer, 4096, 0);
     int i = 0;
+
     while(buffer[i] != '\0'){
         std::cout<<buffer[i]<<std::flush;
 
         i++;
     }
+    char *json = (char*)malloc(sizeof(char)*(i));
+   /* i = 0;
+    while(buffer[i] != '\0'){
+        json[i] = buffer[i];
+        std::cout<<json[i];
+        i++;
+    }*/
     pthread_mutex_lock(&lock_events);
     updateEvents(buffer);
     MeasurementScheduleControl(buffer);
     pthread_mutex_unlock(&lock_events);
     close(sock);
+    delete json;
 
 }
 void sendReport(AMReportPackage *amreport){
