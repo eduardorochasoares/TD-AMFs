@@ -5,10 +5,11 @@
 <TerminalDeviceID>I3E56</TerminalDeviceID>
 <MeasurementReport>
 <MeasurementRequestID>67</MeasurementRequestID>
-<MeasurementReportTriggerTime>9/2/2017  22:43:11</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
-<VideoPlaying>
+<MeasurementReportTriggerTime>10/2/2017  15:10:36</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
+<VoDEvents>
+<Name>Videostart</Name>
 <ServiceIdentifier>Pulp Fiction</ServiceIdentifier>
 <ServiceInstanceID>2</ServiceInstanceID>
-</VideoPlaying>
+</VoDEvents>
 </MeasurementReport>
 </AMReportPackage>

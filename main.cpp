@@ -43,10 +43,10 @@ void *XmlXchange(void *arg);
 void timer();
 void *countDown(void *time);
 void *midwareCommunication(void *arg);
-void MeasurementScheduleControl(char *json);
+void MeasurementScheduleControl(const char *json);
 void verififyEvents(rapidjson::Document& doc, MeasurementSchedule *msched, int i, int j,AMReportPackage *amr);
 void sendReport(AMReportPackage *amreport);
-void updateEvents(char *json);
+void updateEvents(const char *json);
 bool verifyPeriod(MeasurementSchedule *msched);
 
 typedef struct countdown{
@@ -65,13 +65,15 @@ void *clientHandler(void *args){
     char buffer[4096];
     recv(sock, buffer, 4096, 0);
     int i = 0;
-
+    std::string json;
     while(buffer[i] != '\0'){
         std::cout<<buffer[i]<<std::flush;
+        std::string str{buffer[i]};
 
+        json.append(str.c_str());
         i++;
     }
-    char *json = (char*)malloc(sizeof(char)*(i));
+    //char *json = (char*)malloc(sizeof(char)*(i));
    /* i = 0;
     while(buffer[i] != '\0'){
         json[i] = buffer[i];
@@ -79,11 +81,11 @@ void *clientHandler(void *args){
         i++;
     }*/
     pthread_mutex_lock(&lock_events);
-    updateEvents(buffer);
-    MeasurementScheduleControl(buffer);
+    updateEvents(json.c_str());
+    MeasurementScheduleControl(json.c_str());
     pthread_mutex_unlock(&lock_events);
     close(sock);
-    delete json;
+
 
 }
 void sendReport(AMReportPackage *amreport){
@@ -95,7 +97,7 @@ void sendReport(AMReportPackage *amreport){
     pthread_mutex_unlock(&lock_report);
 }
 
-void updateEvents(char *json){
+void updateEvents(const char *json){
     rapidjson::Document doc;
     doc.Parse(json);
     if(doc["Events"].HasMember("AudioVolume")){
@@ -387,7 +389,7 @@ bool verifyPeriod(MeasurementSchedule *msched){
     return false;
 }
 
-void MeasurementScheduleControl(char *json){
+void MeasurementScheduleControl(const char *json){
     rapidjson::Document doc;
     AMReportPackage *amr = new AMReportPackage();
     amr->setSubscriberID("12345");
