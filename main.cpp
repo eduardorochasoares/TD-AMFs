@@ -424,7 +424,7 @@ void *countDown(void *timer){
         struct tm * now = localtime( & t );
         std::cout<<"sleeping for "<<a->time<<"seconds..."<<std::flush;
         sleep(a->time);
-
+        bool have_to_report = false;
         if(verifyPeriod(config->getImmediateMeasurement()->getAMFConfigPckg()->
             getMeasurementSet().at(a->i)->getMeasurementRequests().at(a->j)->getMeasurementSched().at(a->k))){
 
@@ -443,6 +443,7 @@ void *countDown(void *timer){
                     std::cout<<"size : " <<channelsPlaying.size()<<std::endl;
                     for (std::vector<ChannelPlaying*>::iterator it = channelsPlaying.begin() ; it != channelsPlaying.end(); ++it){
                         mreport->getChannelPlaying().push_back(*it);
+                        have_to_report = true;
                     }
                 }
                 if(strcmp(timeTrigger->getSampleSet().at(x)->getSampleSetId().c_str(), "VideoPlaying") == 0){
@@ -450,12 +451,18 @@ void *countDown(void *timer){
                     for (std::vector<VoDPlaying*>::iterator it = videosPlaying.begin() ;
                         it != videosPlaying.end(); ++it){
                         mreport->getVodPlaying().push_back(*it);
+                        have_to_report = true;
+
                     }
                 }
             }
+
             std::cout<<"id :"<<mreport->getMeasurementRequestID()<<std::flush;
             amreport->getMeasurementReports().push_back(mreport);
-            sendReport(amreport);
+
+            if(have_to_report)
+                sendReport(amreport);
+
             delete amreport;
         }
 
