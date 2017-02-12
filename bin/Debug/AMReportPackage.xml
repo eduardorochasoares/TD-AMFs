@@ -4,12 +4,11 @@
 <SubscriberID>12345</SubscriberID>
 <TerminalDeviceID>I3E56</TerminalDeviceID>
 <MeasurementReport>
-<MeasurementRequestID>67</MeasurementRequestID>
-<MeasurementReportTriggerTime>10/2/2017  15:10:36</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
-<VoDEvents>
-<Name>Videostart</Name>
-<ServiceIdentifier>Pulp Fiction</ServiceIdentifier>
+<MeasurementRequestID>73</MeasurementRequestID>
+<MeasurementReportTriggerTime>12/2/2017  10:52:16</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
+<VideoPlaying>
+<ServiceIdentifier>video60.0</ServiceIdentifier>
 <ServiceInstanceID>2</ServiceInstanceID>
-</VoDEvents>
+</VideoPlaying>
 </MeasurementReport>
 </AMReportPackage>

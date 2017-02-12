@@ -62,17 +62,36 @@ void readConfigs(){
 }
 void *clientHandler(void *args){
     int sock = *(int*)args;
-    char buffer[4096];
-    recv(sock, buffer, 4096, 0);
-    int i = 0;
-    std::string json;
+    char buffer[1];
+    std::string json="";
+    while(1){
+        memset(buffer ,0 , 1);
+        int tamanho = recv(sock, buffer, 1    , 0);
+        if(tamanho <= 0 || buffer[0] == '\0'){
+            close(sock);
+            break;
+        }else{
+
+            json += buffer;
+            std::cout<<json<<std::endl;
+        }
+
+    }
+
+
+
+    //std::cout<<json<<std::endl;
+    /*int i = 0;
+
     while(buffer[i] != '\0'){
-        std::cout<<buffer[i]<<std::flush;
+        //std::cout<<buffer[i]<<std::flush;
         std::string str{buffer[i]};
 
-        json.append(str.c_str());
+
         i++;
     }
+    delete [] buffer;*/
+    //json.append('\0');
     //char *json = (char*)malloc(sizeof(char)*(i));
    /* i = 0;
     while(buffer[i] != '\0'){
@@ -84,7 +103,7 @@ void *clientHandler(void *args){
     updateEvents(json.c_str());
     MeasurementScheduleControl(json.c_str());
     pthread_mutex_unlock(&lock_events);
-    close(sock);
+
 
 
 }
@@ -554,15 +573,15 @@ void *XmlXchange(void *arg){
 
     /* na realidadade fará a descoberta através do deamon, ip-fixo para testar*/
 
-    char *buf;
-    buf = new char[4096];
 
+    char buf[32];
+    std::string response ="";
     ClientSocket *s = new ClientSocket();
 
     std::string port = "8009";
     int socket = s->createSocket(port,serverAddress);
 
-    //getting mac address
+    /*//getting mac address
     struct ifreq buffer;
 
     memset(&buffer, 0x00, sizeof(buffer));
@@ -574,22 +593,34 @@ void *XmlXchange(void *arg){
     {
         printf("%.2X ", (unsigned char)buffer.ifr_hwaddr.sa_data[i]);
     }
-    printf("\n");
+    printf("\n");*/
 
 
     if (!std::ifstream("ConfigurationRequestResponse.xml")){
         if(socket != 0){
             s->sendFile("ConfigurationRequest.xml", socket);
-            recv(socket, buf, 4096, 0);
+            while(true){
+                memset(buf ,0 , 32);
+                int num = recv(socket, buf, 32, 0);
+                if(num <= 0){
+                    close(socket);
+                    break;
+                }else{
+                    response += buf;
+                }
+
+
+            }
+            std::cout<<response<<std::endl;
             int i = 0;
             while(buf[i] != '\0'){
                 std::cout<<buf[i]<<std::endl;
                 i++;
             }
 
-            std::ofstream out("ConfigurationRequestResponse.xml", std::ofstream::binary);
-            out.write(buf,i);
-            delete[] buf;
+            std::ofstream out("ConfigurationRequestResponse.xml");
+            out << response;
+
         }else{
             pthread_exit(0);
         }
