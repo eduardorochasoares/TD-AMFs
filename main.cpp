@@ -73,10 +73,11 @@ void *clientHandler(void *args){
         }else{
 
             json += buffer;
-            std::cout<<json<<std::endl;
+
         }
 
     }
+    std::cout<<json<<std::endl;
 
 
 
