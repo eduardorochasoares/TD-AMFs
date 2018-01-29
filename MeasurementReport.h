@@ -40,6 +40,7 @@ class MeasurementReport{
         ChannelStop *channelStop;
         VoDEvent *vodEvent;
         vector<VoDPlaying*> vodPlaying;
+        ServiceRunning* serviceRunning;
 
     public:
         void setMeasurementRequestID(int id);
@@ -95,7 +96,8 @@ class MeasurementReport{
         ChannelStart *getChannelStart();
         ChannelStop *getChannelStop();
 
-
+        void setServiceRunning(ServiceRunning* serviceRunning);
+        ServiceRunning* getServiceRunning();
 
         ~MeasurementReport();
         MeasurementReport();

@@ -326,3 +326,13 @@ vector<VoDPlaying*>& MeasurementReport::getVodPlaying()
     return this->vodPlaying;
 }
 
+void MeasurementReport::setServiceRunning(ServiceRunning* serviceRunning)
+{
+    this->serviceRunning = serviceRunning;
+}
+
+ServiceRunning* MeasurementReport::getServiceRunning()
+{
+    return this->serviceRunning;
+}
+

@@ -19,6 +19,7 @@
 					<Add library="xerces-c" />
 					<Add library="pthread" />
 					<Add directory="../../../../../usr/local/lib" />
+					<Add directory="../../../../usr/include" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -98,6 +99,9 @@
 		<Unit filename="PCInformation.h" />
 		<Unit filename="PermitBlockedInfo.cpp" />
 		<Unit filename="PermitBlockedInfo.h" />
+		<Unit filename="ServiceRunning.h" />
+		<Unit filename="ServiceStartEvent.cpp" />
+		<Unit filename="ServiceStartEvent.h" />
 		<Unit filename="ServiceStartTrigger.cpp" />
 		<Unit filename="ServiceStartTrigger.h" />
 		<Unit filename="StbInformation.cpp" />

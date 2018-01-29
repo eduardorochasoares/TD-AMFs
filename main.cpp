@@ -2,6 +2,7 @@
 #include "ConfigPckgRequest.h"
 #include "MeasurementReport.h"
 #include "Events.h"
+#include "ServiceStartEvent.h"
 #include "AMReportPackage.h"
 #include "ClientSocket.h"
 #include "XmlDomDocument.h"
@@ -32,6 +33,12 @@ ChannelStart *channelStart = new ChannelStart();
 AudioVolume *audioVolume = new AudioVolume();
 VideoResize *videoResize = new VideoResize();
 VoDEvent *vodEvent = new VoDEvent();
+
+/**evento de serviços**/
+LinearChannelStart *linearChannelStart = new LinearChannelStart();
+InteractiveApplicationStart *iappStart = new InteractiveApplicationStart();
+NativeApplicationStart *natappStart = new NativeApplicationStart();
+ServiceRunning *serviceRunning  = new ServiceRunning("none");
 
 std::vector<Events*> commomEvents;
 std::vector<ChannelPlaying*> channelsPlaying;
@@ -292,6 +299,31 @@ void updateEvents(const char *json){
 
     }
 
+    if(doc["Events"].HasMember("ServiceStart"))){
+        std::string name = doc["Events"]["ServiceStart"]["Name"].GetString();
+        serviceRunning->setServiceName(name)
+        if(name.compare("TVLinear") == 0){
+            linearChannelStart->setStatus(true);
+            natappStart->setStatus(false);
+            iappStart->setStatus(false);
+
+        }else if(name.compare("InteractivityApp") == 0){
+            linearChannelStart->setStatus(false);
+            natappStart->setStatus(false);
+            iappStart->setStatus(true);
+        }else if(name.compare("NativeApp") == 0){
+            linearChannelStart->setStatus(false);
+            natappStart->setStatus(true);
+            iappStart->setStatus(false);
+        }else{
+             linearChannelStart->setStatus(false);
+             natappStart->setStatus(false);
+             iappStart->setStatus(false);
+             serviceRunning->setServiceName("none");
+        }
+
+    }
+
 }
 
 void verififyEvents(rapidjson::Document& doc, MeasurementSchedule *msched, int i, int j, AMReportPackage *amr){
@@ -324,6 +356,8 @@ void verififyEvents(rapidjson::Document& doc, MeasurementSchedule *msched, int i
             if((strcmp(te->events, "VoDEvents") == 0) && (doc["Events"].HasMember("VoDEvents"))){
                mreport->setVodEvents(vodEvent);
             }
+
+
 
         }
     }

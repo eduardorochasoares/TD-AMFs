@@ -200,4 +200,6 @@ class VoDPlaying : public Events{
         void setServiceIdentifier(std::string identifier);
 };
 
+
+
 #endif // EVENTS_H_INCLUDED
