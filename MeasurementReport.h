@@ -10,6 +10,8 @@
 #include "PermitBlockedInfo.h"
 #include "Events.h"
 #include "eventDefs.h"
+#include "ServiceRunning.h"
+#include "ServiceStartEvent.h"
 
 class MeasurementReport{
 
@@ -41,6 +43,9 @@ class MeasurementReport{
         VoDEvent *vodEvent;
         vector<VoDPlaying*> vodPlaying;
         ServiceRunning* serviceRunning;
+        LinearChannelStart *linearChannelStart;
+        NativeApplicationStart *nativeAppStart;
+        InteractiveApplicationStart *iAppStart;
 
     public:
         void setMeasurementRequestID(int id);
@@ -68,6 +73,12 @@ class MeasurementReport{
         void setGenericUserInfo(GenericUserInfo *g);
         void setVodEvents(VoDEvent *vodEvent);
         void setVodPlaying(vector<VoDPlaying*>& vod);
+        void setServiceRunning(ServiceRunning* serviceRunning);
+        void setLinearChannelStart(LinearChannelStart* linearChannelStart);
+        void setInteractiveAppStart(InteractiveApplicationStart* iAppStart);
+        void setNativeAppStart(NativeApplicationStart* nativeAppStart);
+
+
 
         int getMeasurementRequestID();
         GenericUserInfo* getGenericUserInfo();
@@ -90,14 +101,15 @@ class MeasurementReport{
         vector<UserPresent*>& getUserPresent();
         UserInfoChange *getUserInfoChange();
         PermitBlockedInfo *getPermitBlockedInfo();
-
         vector<ChannelPlaying*>& getChannelPlaying();
         vector<VoDPlaying*>& getVodPlaying();
         ChannelStart *getChannelStart();
         ChannelStop *getChannelStop();
 
-        void setServiceRunning(ServiceRunning* serviceRunning);
         ServiceRunning* getServiceRunning();
+        InteractiveApplicationStart* getInteractiveApplicationStart();
+        NativeApplicationStart* getNativeApplicationStart();
+        LinearChannelStart* getLinearChannelStart();
 
         ~MeasurementReport();
         MeasurementReport();

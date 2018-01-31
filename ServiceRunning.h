@@ -1,6 +1,6 @@
 #ifndef SERVICERUNNING_H_INCLUDED
 #define SERVICERUNNING_H_INCLUDED
-
+#include <string>
 class ServiceRunning{
     private:
         std::string serviceName;

@@ -99,6 +99,7 @@
 		<Unit filename="PCInformation.h" />
 		<Unit filename="PermitBlockedInfo.cpp" />
 		<Unit filename="PermitBlockedInfo.h" />
+		<Unit filename="ServiceRunning.cpp" />
 		<Unit filename="ServiceRunning.h" />
 		<Unit filename="ServiceStartEvent.cpp" />
 		<Unit filename="ServiceStartEvent.h" />

@@ -24,8 +24,10 @@
 <EventTrigger>ChannelStart</EventTrigger>
 <EventTrigger>ChannelStop</EventTrigger>
 <EventTrigger>VoDEvents</EventTrigger>
+<EventTrigger>ServiceStart</EventTrigger>
 <TimeSampleTrigger>VideoPlaying</TimeSampleTrigger>
 <TimeSampleTrigger>ChannelPlaying</TimeSampleTrigger>
+<TimeSampleTrigger>ServiceRunning</TimeSampleTrigger>
 </MeasurementTriggerMethod>
 <ReportDeliveryModes>
 <DeliveryMode>ImmediatePush</DeliveryMode>

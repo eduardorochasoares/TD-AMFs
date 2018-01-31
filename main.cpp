@@ -2,6 +2,7 @@
 #include "ConfigPckgRequest.h"
 #include "MeasurementReport.h"
 #include "Events.h"
+#include "ServiceRunning.h"
 #include "ServiceStartEvent.h"
 #include "AMReportPackage.h"
 #include "ClientSocket.h"
@@ -20,6 +21,8 @@
 #include <sys/types.h>
 #include <net/if.h>
 #include "XmlDomDocument.h"
+#include <cstdio>
+#include <cstdlib>
 
         // std::mutex
 using namespace std;
@@ -299,9 +302,9 @@ void updateEvents(const char *json){
 
     }
 
-    if(doc["Events"].HasMember("ServiceStart"))){
+    if(doc["Events"].HasMember("ServiceStart")){
         std::string name = doc["Events"]["ServiceStart"]["Name"].GetString();
-        serviceRunning->setServiceName(name)
+        serviceRunning->setServiceName(name);
         if(name.compare("TVLinear") == 0){
             linearChannelStart->setStatus(true);
             natappStart->setStatus(false);
@@ -356,6 +359,14 @@ void verififyEvents(rapidjson::Document& doc, MeasurementSchedule *msched, int i
             if((strcmp(te->events, "VoDEvents") == 0) && (doc["Events"].HasMember("VoDEvents"))){
                mreport->setVodEvents(vodEvent);
             }
+
+            if((strcmp(te->events, "ServiceStart") == 0) && (doc["Events"].HasMember("ServiceStart"))){
+               mreport->setLinearChannelStart(linearChannelStart);
+               mreport->setNativeAppStart(natappStart);
+               mreport->setInteractiveAppStart(iappStart);
+            }
+
+
 
 
 
@@ -511,6 +522,14 @@ void *countDown(void *timer){
 
                     }
                 }
+
+                if(strcmp(timeTrigger->getSampleSet().at(x)->getSampleSetId().c_str(), "ServiceRunning") == 0){
+                        if(strcmp(serviceRunning->getServiceName().c_str(), "none" ) != 0){
+                            mreport->setServiceRunning(serviceRunning);
+                            have_to_report = true;
+                        }
+
+                }
             }
 
             std::cout<<"id :"<<mreport->getMeasurementRequestID()<<std::flush;
@@ -652,9 +671,14 @@ void *XmlXchange(void *arg){
                 std::cout<<buf[i]<<std::endl;
                 i++;
             }
+            FILE * pFile;
 
-            std::ofstream out("ConfigurationRequestResponse.xml");
-            out << response;
+            pFile = std::fopen("ConfigurationRequestResponse.xml","w");
+            if(pFile != NULL){
+                std::fputs(response.c_str(), pFile);
+            }
+
+            fclose(pFile);
 
         }else{
             pthread_exit(0);

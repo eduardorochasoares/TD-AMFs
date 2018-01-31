@@ -609,7 +609,7 @@
 	"TimeTrigger.h"
 	"XmlDomDocument.h"
 
-1486752664 source:/home/eduardo/tdAmf/TD-AMFs/AMReportPackage.cpp
+1517355443 source:/home/eduardo/tdAmf/TD-AMFs/AMReportPackage.cpp
 	"AMReportPackage.h"
 	<fstream>
 	"eventDefs.h"
@@ -619,7 +619,7 @@
 	"StorageCongestionImpactedService.h"
 	<vector>
 
-1486752664 /home/eduardo/tdAmf/TD-AMFs/MeasurementReport.h
+1517253546 /home/eduardo/tdAmf/TD-AMFs/MeasurementReport.h
 	"eventDefs.h"
 	"ConfigurationChange.h"
 	"DeviceInformation.h"
@@ -630,6 +630,8 @@
 	"PermitBlockedInfo.h"
 	"Events.h"
 	"eventDefs.h"
+	"ServiceRunning.h"
+	"ServiceStartEvent.h"
 
 1486752664 /home/eduardo/tdAmf/TD-AMFs/ConfigurationChange.h
 	"AMFCapabilityProfile.h"
@@ -677,7 +679,7 @@
 1486752664 source:/home/eduardo/tdAmf/TD-AMFs/AudioAmplifierInformation.cpp
 	"AudioAmplifierInformation.h"
 
-1486752664 source:/home/eduardo/tdAmf/TD-AMFs/ClientSocket.cpp
+1517412369 source:/home/eduardo/tdAmf/TD-AMFs/ClientSocket.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -759,11 +761,12 @@
 1486752664 source:/home/eduardo/tdAmf/TD-AMFs/LinearTVQualifier.cpp
 	"LinearTVQualifier.h"
 
-1517227741 source:/home/eduardo/tdAmf/TD-AMFs/main.cpp
+1517413364 source:/home/eduardo/tdAmf/TD-AMFs/main.cpp
 	<iostream>
 	"ConfigPckgRequest.h"
 	"MeasurementReport.h"
 	"Events.h"
+	"ServiceRunning.h"
 	"ServiceStartEvent.h"
 	"AMReportPackage.h"
 	"ClientSocket.h"
@@ -782,6 +785,8 @@
 	<sys/types.h>
 	<net/if.h>
 	"XmlDomDocument.h"
+	<cstdio>
+	<cstdlib>
 
 1486752664 /home/eduardo/tdAmf/TD-AMFs/include/rapidjson/document.h
 	"reader.h"
@@ -892,7 +897,7 @@
 	"stdlib.h"
 	"Algoritmos.h"
 
-1486752664 source:/home/eduardo/tdAmf/TD-AMFs/MeasurementReport.cpp
+1517253825 source:/home/eduardo/tdAmf/TD-AMFs/MeasurementReport.cpp
 	"MeasurementReport.h"
 
 1486752664 source:/home/eduardo/tdAmf/TD-AMFs/MeasurementRequest.cpp
@@ -950,8 +955,14 @@
 	"XmlDomDocument.h"
 	"stdio.h"
 
-1517227818 /home/eduardo/tdAmf/TD-AMFs/ServiceStartEvent.h
+1517252021 /home/eduardo/tdAmf/TD-AMFs/ServiceStartEvent.h
 
 1517227901 source:/home/eduardo/tdAmf/TD-AMFs/ServiceStartEvent.cpp
 	"ServiceStartEvent.h"
+
+1517252364 /home/eduardo/tdAmf/TD-AMFs/ServiceRunning.h
+	<string>
+
+1517252374 source:/home/eduardo/tdAmf/TD-AMFs/ServiceRunning.cpp
+	"ServiceRunning.h"
 

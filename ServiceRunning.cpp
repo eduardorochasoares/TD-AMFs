@@ -15,7 +15,7 @@ void ServiceRunning::setServiceName(std::string serviceName)
     this->serviceName = serviceName;
 }
 
-string ServiceRunning::getServiceName()
+std::string ServiceRunning::getServiceName()
 {
     return this->serviceName;
 }

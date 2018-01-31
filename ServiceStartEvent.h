@@ -13,19 +13,19 @@ class ServiceStartEvent{
         ~ServiceStartEvent();
 
 };
-class LinearChannelStart : ServiceStartEvent{
+class LinearChannelStart : public ServiceStartEvent{
     public:
         LinearChannelStart();
         ~LinearChannelStart();
 };
 
-class InteractiveApplicationStart : ServiceStartEvent{
+class InteractiveApplicationStart : public ServiceStartEvent{
     public:
          InteractiveApplicationStart();
         ~InteractiveApplicationStart();
 };
 
-class NativeApplicationStart : ServiceStartEvent{
+class NativeApplicationStart : public ServiceStartEvent{
     public:
         NativeApplicationStart();
         ~NativeApplicationStart();

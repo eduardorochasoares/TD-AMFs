@@ -23,7 +23,9 @@
 <EventTrigger>AudioVolume</EventTrigger>
 <EventTrigger>ChannelStart</EventTrigger>
 <EventTrigger>ChannelStop</EventTrigger>
+<EventTrigger>ServiceStart</EventTrigger>
 <TimeSampleTrigger>ChannelPlaying</TimeSampleTrigger>
+<TimeSampleTrigger>ServiceRunning</TimeSampleTrigger>
 </MeasurementTriggerMethod>
 <ReportDeliveryModes>
 <DeliveryMode>ImmediatePush</DeliveryMode>

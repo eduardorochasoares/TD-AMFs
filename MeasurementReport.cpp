@@ -313,6 +313,9 @@ MeasurementReport::MeasurementReport()
     this->videoResize = NULL;
     this->videoZoom = NULL;
     this->vodEvent = NULL;
+    this->nativeAppStart = NULL;
+    this->iAppStart = NULL;
+    this->linearChannelStart = NULL;
 
 }
 
@@ -336,3 +339,32 @@ ServiceRunning* MeasurementReport::getServiceRunning()
     return this->serviceRunning;
 }
 
+void MeasurementReport::setLinearChannelStart(LinearChannelStart* linearChannelStart)
+{
+    this->linearChannelStart = linearChannelStart;
+}
+
+void MeasurementReport::setInteractiveAppStart(InteractiveApplicationStart* iAppStart)
+{
+    this->iAppStart = iAppStart;
+}
+
+void MeasurementReport::setNativeAppStart(NativeApplicationStart* nativeAppStart)
+{
+    this->nativeAppStart = nativeAppStart;
+}
+
+InteractiveApplicationStart* MeasurementReport::getInteractiveApplicationStart()
+{
+    return this->iAppStart;
+}
+
+NativeApplicationStart* MeasurementReport::getNativeApplicationStart()
+{
+    return this->nativeAppStart;
+}
+
+LinearChannelStart* MeasurementReport::getLinearChannelStart()
+{
+    return this->linearChannelStart;
+}

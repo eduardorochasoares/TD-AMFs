@@ -392,6 +392,59 @@ void AMReportPackage::writeXML()
 
             }
 
+            //Service Running Time Trigger
+            ServiceRunning *serviceRunning = NULL;
+            if(m->getServiceRunning() != NULL){
+                serviceRunning = m->getServiceRunning();
+
+                xml<<"<ServiceRunning>"<<endl;
+                xml<<"<ServiceIdentifier>"<<serviceRunning->getServiceName()<<"</ServiceIdentifier>"<<endl;
+                xml<<"</ServiceRunning>"<<endl;
+            }
+
+            //Services Starts Events
+            LinearChannelStart *linearChannelStart = NULL;
+            if(m->getLinearChannelStart() != NULL){
+                linearChannelStart = m->getLinearChannelStart();
+                if(linearChannelStart->getStatus()){
+                    xml<<"<LinearChannelStart>"<<"True"<<"</LinearChannelStart>"<<endl;
+
+                }else{
+                    xml<<"<LinearChannelStart>"<<"False"<<"</LinearChannelStart>"<<endl;
+
+                }
+            }
+
+            InteractiveApplicationStart *iappStart = NULL;
+            if(m->getInteractiveApplicationStart() != NULL){
+                iappStart = m->getInteractiveApplicationStart();
+
+                if(iappStart->getStatus()){
+
+                    xml<<"<InteractiveApplicationStart>"<<"True"<<"</InteractiveApplicationStart>"<<endl;
+
+                }else{
+
+                     xml<<"<InteractiveApplicationStart>"<<"False"<<"</InteractiveApplicationStart>"<<endl;
+                }
+            }
+
+            NativeApplicationStart *natappStart = NULL;
+            if(m->getNativeApplicationStart() != NULL){
+                natappStart = m->getNativeApplicationStart();
+
+                if(natappStart->getStatus()){
+
+                    xml<<"<NativeApplicationStart>"<<"True"<<"</NativeApplicationStart>"<<endl;
+
+                }else{
+
+                    xml<<"<NativeApplicationStart>"<<"False"<<"</NativeApplicationStart>"<<endl;
+
+                }
+            }
+
+
 
 
             xml<<"</MeasurementReport>"<<endl;
