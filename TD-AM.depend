@@ -966,3 +966,499 @@
 1517252374 source:/home/eduardo/tdAmf/TD-AMFs/ServiceRunning.cpp
 	"ServiceRunning.h"
 
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/Algoritmos.cpp
+	"Algoritmos.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/Algoritmos.h
+	<string>
+	<vector>
+	<iostream>
+	<ctime>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/AllContentClassExceptList.cpp
+	"AllContentClassExceptList.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/AllContentClassExceptList.h
+	"eventDefs.h"
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/eventDefs.h
+	<string>
+	<vector>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/XmlDomDocument.h
+	<xercesc/parsers/XercesDOMParser.hpp>
+	<xercesc/dom/DOM.hpp>
+	<xercesc/sax/HandlerBase.hpp>
+	<xercesc/util/XMLString.hpp>
+	<xercesc/util/PlatformUtils.hpp>
+	<xercesc/framework/MemBufInputSource.hpp>
+	<string>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/AMFCapabilityProfile.cpp
+	"AMFCapabilityProfile.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/AMFCapabilityProfile.h
+	<vector>
+	<string>
+	"MeasurementTriggerMethod.h"
+	"TVInformation.h"
+	"StbInformation.h"
+	"PCInformation.h"
+	"IptvTVInformation.h"
+	"ImageSize.h"
+	"MobileDeviceInformation.h"
+	"AudioAmplifierInformation.h"
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementTriggerMethod.h
+	<vector>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/TVInformation.h
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/StbInformation.h
+	<string>
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/PCInformation.h
+	<string>
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/IptvTVInformation.h
+	<string>
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ImageSize.h
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MobileDeviceInformation.h
+	<string>
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/AudioAmplifierInformation.h
+	<fstream>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/AMFConfigPckg.cpp
+	"AMFConfigPckg.h"
+	"stdlib.h"
+	"Algoritmos.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/AMFConfigPckg.h
+	"MeasurementSet.h"
+	<ctime>
+	<vector>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementSet.h
+	"AllContentClassExceptList.h"
+	"MeasurementPeriod.h"
+	"DeliveryWindow.h"
+	"MeasurementRequest.h"
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementPeriod.h
+	<vector>
+	<ctime>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/DeliveryWindow.h
+	<ctime>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementRequest.h
+	"LinearTVQualifier.h"
+	"MeasurementDeliverySched.h"
+	"MeasurementSchedule.h"
+	"XmlDomDocument.h"
+	"AllContentClassExceptList.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/LinearTVQualifier.h
+	<string>
+	<vector>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementDeliverySched.h
+	<vector>
+	"DeliveryWindow.h"
+	<string>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementSchedule.h
+	"EventTrigger.h"
+	"TimeTrigger.h"
+	"MeasurementPeriod.h"
+	"ServiceStartTrigger.h"
+	<vector>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/EventTrigger.h
+	<string>
+	<vector>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/TimeTrigger.h
+	<string>
+	<vector>
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ServiceStartTrigger.h
+	"TimeTrigger.h"
+	"XmlDomDocument.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/AMReportPackage.cpp
+	"AMReportPackage.h"
+	<fstream>
+	"eventDefs.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/AMReportPackage.h
+	"MeasurementReport.h"
+	"StorageCongestionImpactedService.h"
+	<vector>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/MeasurementReport.h
+	"eventDefs.h"
+	"ConfigurationChange.h"
+	"DeviceInformation.h"
+	"UserIdBioInfo.h"
+	"UserList.h"
+	"GenericUserInfo.h"
+	"UserInfoChange.h"
+	"PermitBlockedInfo.h"
+	"Events.h"
+	"eventDefs.h"
+	"ServiceRunning.h"
+	"ServiceStartEvent.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ConfigurationChange.h
+	"AMFCapabilityProfile.h"
+	"TVInformation.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/DeviceInformation.h
+	"StbInformation.h"
+	"TVInformation.h"
+	"PCInformation.h"
+	"IptvTVInformation.h"
+	"AudioAmplifierInformation.h"
+	"MobileDeviceInformation.h"
+	<fstream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/UserIdBioInfo.h
+	"eventDefs.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/UserList.h
+	"eventDefs.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/GenericUserInfo.h
+	"eventDefs.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/UserInfoChange.h
+	"eventDefs.h"
+	"UserIdBioInfo.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/PermitBlockedInfo.h
+	"ConfigPckgRequest.h"
+	"AllContentClassExceptList.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ConfigPckgRequest.h
+	<string>
+	<vector>
+	<iostream>
+	"AMFCapabilityProfile.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/Events.h
+	<string>
+	"eventDefs.h"
+	"AMFCapabilityProfile.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ServiceRunning.h
+	<string>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ServiceStartEvent.h
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/StorageCongestionImpactedService.h
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/AudioAmplifierInformation.cpp
+	"AudioAmplifierInformation.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ClientSocket.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<fcntl.h>
+	<string.h>
+	"ClientSocket.h"
+	"stdio.h"
+	"stdlib.h"
+	<WinSock2.h>
+	<Ws2tcpip.h>
+	<unistd.h>
+	<netinet/in.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<net/if.h>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ClientSocket.h
+	<vector>
+	<WinSock2.h>
+	<Ws2tcpip.h>
+	<unistd.h>
+	<netinet/in.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netdb.h>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ConfigPckgRequest.cpp
+	"ConfigPckgRequest.h"
+	"MeasurementTriggerMethod.h"
+	<fstream>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ConfigurationChange.cpp
+	"ConfigurationChange.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ConfigurationPckgRequestResponse.cpp
+	"ConfigurationPckgRequestResponse.h"
+	<string>
+	<iostream>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/ConfigurationPckgRequestResponse.h
+	"Directive.h"
+	"XmlDomDocument.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/Directive.h
+	"AMFConfigPckg.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/DeliveryWindow.cpp
+	"DeliveryWindow.h"
+	"stdlib.h"
+	"Algoritmos.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/DeviceInformation.cpp
+	"DeviceInformation.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/Directive.cpp
+	"Directive.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/Events.cpp
+	"Events.h"
+	"AMFCapabilityProfile.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/EventTrigger.cpp
+	"EventTrigger.h"
+	<iostream>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/GenericUserInfo.cpp
+	"GenericUserInfo.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ImageSize.cpp
+	"ImageSize.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/IptvTVInformation.cpp
+	"IptvTVInformation.h"
+	"string.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/LinearTVQualifier.cpp
+	"LinearTVQualifier.h"
+
+1517488200 source:/home/eduardo/TDAMF/TD-AMFs/main.cpp
+	<iostream>
+	"ConfigPckgRequest.h"
+	"MeasurementReport.h"
+	"Events.h"
+	"ServiceRunning.h"
+	"ServiceStartEvent.h"
+	"AMReportPackage.h"
+	"ClientSocket.h"
+	"XmlDomDocument.h"
+	<iostream>
+	"ConfigurationPckgRequestResponse.h"
+	"stdio.h"
+	"stdlib.h"
+	"Algoritmos.h"
+	"EventTrigger.h"
+	<pthread.h>
+	"include/rapidjson/document.h"
+	<unistd.h>
+	<netdb.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<net/if.h>
+	"XmlDomDocument.h"
+	<cstdio>
+	<cstdlib>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/document.h
+	"reader.h"
+	"internal/meta.h"
+	"internal/strfunc.h"
+	"memorystream.h"
+	"encodedstream.h"
+	<new>
+	<iterator>
+	<utility>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/reader.h
+	"allocators.h"
+	"stream.h"
+	"encodedstream.h"
+	"internal/meta.h"
+	"internal/stack.h"
+	"internal/strtod.h"
+	<intrin.h>
+	<nmmintrin.h>
+	<emmintrin.h>
+	<stdexcept>
+	"rapidjson/error/error.h"
+	"rapidjson/reader.h"
+	"error/error.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/allocators.h
+	"rapidjson.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/rapidjson.h
+	<cstdlib>
+	<cstring>
+	"rapidjson/..."
+	<string>
+	"msinttypes/stdint.h"
+	"msinttypes/inttypes.h"
+	<stdint.h>
+	<inttypes.h>
+	<endian.h>
+	"rapidjson/..."
+	<cassert>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/msinttypes/stdint.h
+	<stdint.h>
+	<limits.h>
+	<wchar.h>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/msinttypes/inttypes.h
+	"stdint.h"
+	<inttypes.h>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/stream.h
+	"rapidjson.h"
+	"encodings.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/encodings.h
+	"rapidjson.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/encodedstream.h
+	"stream.h"
+	"memorystream.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/memorystream.h
+	"stream.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/meta.h
+	"../rapidjson.h"
+	<type_traits>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/stack.h
+	"../allocators.h"
+	"swap.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/swap.h
+	"../rapidjson.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/strtod.h
+	"ieee754.h"
+	"biginteger.h"
+	"diyfp.h"
+	"pow10.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/ieee754.h
+	"../rapidjson.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/biginteger.h
+	"../rapidjson.h"
+	<intrin.h>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/diyfp.h
+	"../rapidjson.h"
+	<intrin.h>
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/pow10.h
+	"../rapidjson.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/error/error.h
+	"../rapidjson.h"
+
+1517443600 /home/eduardo/TDAMF/TD-AMFs/include/rapidjson/internal/strfunc.h
+	"../stream.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementDeliverySched.cpp
+	"MeasurementDeliverySched.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementPeriod.cpp
+	"MeasurementPeriod.h"
+	"stdlib.h"
+	"Algoritmos.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementReport.cpp
+	"MeasurementReport.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementRequest.cpp
+	"MeasurementRequest.h"
+	"Algoritmos.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementSchedule.cpp
+	"MeasurementSchedule.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementSet.cpp
+	"MeasurementSet.h"
+	"Algoritmos.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MeasurementTriggerMethod.cpp
+	"MeasurementTriggerMethod.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/MobileDeviceInformation.cpp
+	"MobileDeviceInformation.h"
+	"string.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/PCInformation.cpp
+	"PCInformation.h"
+	<string.h>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/PermitBlockedInfo.cpp
+	"PermitBlockedInfo.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ServiceRunning.cpp
+	"ServiceRunning.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ServiceStartEvent.cpp
+	"ServiceStartEvent.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/ServiceStartTrigger.cpp
+	"ServiceStartTrigger.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/StbInformation.cpp
+	"StbInformation.h"
+	"string.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/StorageCongestionImpactedService.cpp
+	"StorageCongestionImpactedService.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/TimeTrigger.cpp
+	"TimeTrigger.h"
+	<iostream>
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/TVInformation.cpp
+	"TVInformation.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/UserIdBioInfo.cpp
+	"UserIdBioInfo.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/UserInfoChange.cpp
+	"UserInfoChange.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/UserList.cpp
+	"UserList.h"
+
+1517443600 source:/home/eduardo/TDAMF/TD-AMFs/XmlDomDocument.cpp
+	"XmlDomDocument.h"
+	"stdio.h"
+

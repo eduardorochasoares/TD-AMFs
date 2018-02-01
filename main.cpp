@@ -305,7 +305,7 @@ void updateEvents(const char *json){
     if(doc["Events"].HasMember("ServiceStart")){
         std::string name = doc["Events"]["ServiceStart"]["Name"].GetString();
         serviceRunning->setServiceName(name);
-        if(name.compare("TVLinear") == 0){
+        if(name.compare("LinearTV") == 0){
             linearChannelStart->setStatus(true);
             natappStart->setStatus(false);
             iappStart->setStatus(false);
@@ -525,6 +525,7 @@ void *countDown(void *timer){
 
                 if(strcmp(timeTrigger->getSampleSet().at(x)->getSampleSetId().c_str(), "ServiceRunning") == 0){
                         if(strcmp(serviceRunning->getServiceName().c_str(), "none" ) != 0){
+
                             mreport->setServiceRunning(serviceRunning);
                             have_to_report = true;
                         }
@@ -628,7 +629,7 @@ void *XmlXchange(void *arg){
     /* na realidadade fará a descoberta através do deamon, ip-fixo para testar*/
 
 
-    char buf[32];
+    char buf[1];
     std::string response ="";
     ClientSocket *s = new ClientSocket();
 
@@ -649,36 +650,32 @@ void *XmlXchange(void *arg){
     }
     printf("\n");*/
 
-
     if (!std::ifstream("ConfigurationRequestResponse.xml")){
+
         if(socket != 0){
             s->sendFile("ConfigurationRequest.xml", socket);
             while(true){
-                memset(buf ,0 , 32);
-                int num = recv(socket, buf, 32, 0);
+                memset(buf ,0 , 1);
+                int num = recv(socket, buf, 1, 0);
                 if(num <= 0){
                     close(socket);
                     break;
                 }else{
                     response += buf;
+
+
                 }
 
 
+
+
             }
+            std::ofstream myfile ("ConfigurationRequestResponse.xml");
+
             std::cout<<response<<std::endl;
-            int i = 0;
-            while(buf[i] != '\0'){
-                std::cout<<buf[i]<<std::endl;
-                i++;
-            }
-            FILE * pFile;
+            myfile << response;
+            myfile.close();
 
-            pFile = std::fopen("ConfigurationRequestResponse.xml","w");
-            if(pFile != NULL){
-                std::fputs(response.c_str(), pFile);
-            }
-
-            fclose(pFile);
 
         }else{
             pthread_exit(0);

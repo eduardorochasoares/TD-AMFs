@@ -4,10 +4,10 @@
 <SubscriberID>12345</SubscriberID>
 <TerminalDeviceID>I3E56</TerminalDeviceID>
 <MeasurementReport>
-<MeasurementRequestID>12</MeasurementRequestID>
-<MeasurementReportTriggerTime>31/1/2018  12:2:27</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
-<LinearChannelStart>False</LinearChannelStart>
-<InteractiveApplicationStart>False</InteractiveApplicationStart>
-<NativeApplicationStart>False</NativeApplicationStart>
+<MeasurementRequestID>96</MeasurementRequestID>
+<MeasurementReportTriggerTime>1/2/2018  10:52:47</MeasurementReportTriggerTime><DisplayStatus>turned off</DisplayStatus>
+<ServiceRunning>
+<ServiceIdentifier>LinearTV</ServiceIdentifier>
+</ServiceRunning>
 </MeasurementReport>
 </AMReportPackage>
